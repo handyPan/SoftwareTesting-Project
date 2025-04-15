@@ -50,13 +50,13 @@ project-root/
 ## 🚀 Generation of test cases
 - ACTS GUI
 
-<img src="img/ACTS.png" alt="ACTS" width="50%"/>
+<img src="img/ACTS.PNG" alt="ACTS" width="50%"/>
 
 
 
 - Z3 (*TestCaseGeneratorByZ3.java)
 
-<img src="img/Z3.png" alt="ACTS" width="100%"/>
+<img src="img/Z3.PNG" alt="ACTS" width="100%"/>
 
 
 ## 🛠️ How to run
