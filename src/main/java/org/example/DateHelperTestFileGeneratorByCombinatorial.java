@@ -66,7 +66,7 @@ public class DateHelperTestFileGeneratorByCombinatorial {
             writer.println("            DateHelperTestMethods.test_getDateOnly_stringToLong(index, datetime);");
             writer.println("            DateHelperTestMethods.test_parseAnyDate_long(index, datetime);");
             writer.println("            DateHelperTestMethods.test_parseDate_long(index, datetime);");
-            writer.println("            if (format.equals(DateHelper.DateFormats.S_DDMMYYYY) || format.equals(DateHelper.DateFormats.S_DDMMyy)) {");
+            writer.println("            if (format.equals(DateHelper.DateFormats.S_DDMMYYYY.toString()) || format.equals(DateHelper.DateFormats.S_DDMMyy.toString())) {");
             writer.println("                DateHelperTestMethods.test_getDaysBetweenTwoDate_long(index, datetime, format);");
             writer.println("                DateHelperTestMethods.test_getHoursBetweenTwoDate_long(index, datetime, format);");
             writer.println("                DateHelperTestMethods.test_getMinutesBetweenTwoDates_long(index, datetime, format);");

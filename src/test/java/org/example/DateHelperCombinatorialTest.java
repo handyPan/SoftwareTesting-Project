@@ -109,13 +109,13 @@ public class DateHelperCombinatorialTest {
         // tests for cases with the format of dd/MM/yyyy
         if (datetime.contains("/") && !datetime.contains(":")) {
             DateHelperTestMethods.test_getDateOnly_stringToLong(index, datetime);
+            DateHelperTestMethods.test_parseAnyDate_long(index, datetime);
             DateHelperTestMethods.test_parseDate_long(index, datetime);
-            if (format.equals(DateHelper.DateFormats.S_DDMMYYYY) || format.equals(DateHelper.DateFormats.S_DDMMyy)) {
+            if (format.equals(DateHelper.DateFormats.S_DDMMYYYY.toString()) || format.equals(DateHelper.DateFormats.S_DDMMyy.toString())) {
                 DateHelperTestMethods.test_getDaysBetweenTwoDate_long(index, datetime, format);
                 DateHelperTestMethods.test_getHoursBetweenTwoDate_long(index, datetime, format);
                 DateHelperTestMethods.test_getMinutesBetweenTwoDates_long(index, datetime, format);
             }
-            DateHelperTestMethods.test_parseAnyDate_long(index, datetime);
         // tests for cases with the format of dd/MM/yyyy, hh:mma
         } else if (datetime.contains("/") && datetime.contains(":")) {
             DateHelperTestMethods.test_getDateAndTime_stringToString(index, datetime);

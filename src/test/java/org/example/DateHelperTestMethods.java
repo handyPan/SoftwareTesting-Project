@@ -1,5 +1,7 @@
 package org.example;
 
+import org.junit.Test;
+
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
@@ -87,7 +89,6 @@ public class DateHelperTestMethods {
                         DateHelper.DateFormats.valueOf(format)
                 );
             }
-            System.out.println(result);
         } catch (Exception e) {
             System.out.println(e.getMessage());
             assertTrue(e.getMessage().contains("Unparseable date"));
@@ -103,12 +104,10 @@ public class DateHelperTestMethods {
         } else if (datetime.matches("\\d{2}/\\d{2}/\\d{2}")) {
             datetime = datetime.substring(0, 6) + "20" + datetime.substring(6);
         }
-        System.out.println(datetime);
         String newDateTimeStr = datetime + " 00:00:00";
         LocalDateTime epochStart = LocalDateTime.parse(oldDateTimeStr, formatter);
         LocalDateTime targetDate = LocalDateTime.parse(newDateTimeStr, formatter);
         long daysDifference = - ChronoUnit.DAYS.between(epochStart, targetDate);
-        System.out.println(daysDifference);
         assertTrue(daysDifference == result);
     }
 
