@@ -59,13 +59,23 @@ project-root/
 <img src="img/Z3.PNG" alt="ACTS" width="100%"/>
 
 
+## 💡 Generation of test files
+In `*FileGenerator*.java`, make sure the following input and output file paths are correctly configured.
+```java
+public static void main(String[] args){
+    String inputFilePath="src\\main\\resources\\DateHelper-Pairwise-output-after.csv";
+    String outputFilePath="src\\test\\java\\org\\example\\DateHelperCombinatorialTest.java";
+}
+```
+Run ```main()```
+
 ## 🛠️ How to run
 ### Compile
 ```cmd
 mvn clean compile test-compile
 ```
 
-### How to generate report by Jacoco
+### Generate report by Jacoco
 - QuadraticCombinatorialTest
 ```cmd
 mvn clean jacoco:prepare-agent test -Dtest="org.example.QuadraticCombinatorialTest" -DtestFailureIgnore=true
@@ -87,7 +97,7 @@ mvn clean jacoco:prepare-agent test -Dtest="org.example.DateHelperZ3Test" -Dtest
 mvn jacoco:report
 ```
 
-### How to generate report by PITest
+### Generate report by PITest
 **Note: must run ```mvn clean compile test-compile``` first**
 
 - QuadraticCombinatorialTest
