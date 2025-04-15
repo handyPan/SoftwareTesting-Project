@@ -50,7 +50,7 @@ project-root/
 ## 🚀 Generation of test cases
 - ACTS GUI
 
-<img src="img/ACTS.PNG" alt="ACTS" width="50%"/>
+<img src="img/ACTS.PNG" alt="ACTS" width="100%"/>
 
 
 
