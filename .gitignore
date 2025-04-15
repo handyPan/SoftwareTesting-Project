@@ -1,0 +1,13 @@
+# Ignore Maven build directory
+target/
+
+# IDE and editor files (optional but recommended)
+*.iml
+.idea/
+*.class
+*.log
+.vscode/
+
+# OS junk files
+.DS_Store
+Thumbs.db
