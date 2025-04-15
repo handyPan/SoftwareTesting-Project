@@ -10,7 +10,7 @@ import java.util.*;
 public class DateHelperTestCaseGeneratorByZ3 {
 
     public static void main(String[] args) {
-        try (Context ctx = new Context(); FileWriter writer = new FileWriter("src\\main\\resources\\DateHelperZ3.csv")) {
+        try (Context ctx = new Context(); FileWriter writer = new FileWriter("src\\main\\resources\\DateHelperZ3-after.csv")) {
             writer.write("datetime,format\n");
 
             // Define output formats
@@ -41,7 +41,7 @@ public class DateHelperTestCaseGeneratorByZ3 {
                 }
             }
 
-            System.out.println("CSV content written to src\\main\\resources\\DateHelperZ3.csv");
+            System.out.println("CSV content written to src\\main\\resources\\DateHelperZ3-after.csv");
 
         } catch (IOException | Z3Exception e) {
             e.printStackTrace();

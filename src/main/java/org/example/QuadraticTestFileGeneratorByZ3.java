@@ -6,7 +6,7 @@ import java.util.*;
 public class QuadraticTestFileGeneratorByZ3 {
 
     public static void main(String[] args) {
-        String inputFilePath = "src\\main\\resources\\QuadraticZ3.csv";
+        String inputFilePath = "src\\main\\resources\\QuadraticZ3-after.csv";
         String outputFilePath = "src\\test\\java\\org\\example\\QuadraticZ3Test.java";
 
         List<String[]> testCases = new ArrayList<>();

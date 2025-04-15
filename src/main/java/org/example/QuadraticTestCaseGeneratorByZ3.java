@@ -7,7 +7,7 @@ import java.io.IOException;
 public class QuadraticTestCaseGeneratorByZ3 {
 
     public static void main(String[] args) {
-        try (Context ctx = new Context(); FileWriter writer = new FileWriter("src\\main\\resources\\QuadraticZ3.csv")) {
+        try (Context ctx = new Context(); FileWriter writer = new FileWriter("src\\main\\resources\\QuadraticZ3-after.csv")) {
             writer.write("a,b,c\n");
 
             int testCasesPerType = 3;
@@ -77,7 +77,7 @@ public class QuadraticTestCaseGeneratorByZ3 {
 
             generateEdgeCases(writer);
 
-            System.out.println("CSV content written to src\\main\\resources\\QuadraticZ3.csv");
+            System.out.println("CSV content written to src\\main\\resources\\QuadraticZ3-after.csv");
 
         } catch (IOException | Z3Exception e) {
             e.printStackTrace();

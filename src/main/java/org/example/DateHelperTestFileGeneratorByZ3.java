@@ -5,7 +5,7 @@ import java.util.*;
 
 public class DateHelperTestFileGeneratorByZ3 {
     public static void main(String[] args) {
-        String inputFilePath = "src\\main\\resources\\DateHelperZ3.csv";
+        String inputFilePath = "src\\main\\resources\\DateHelperZ3-after.csv";
         String outputFilePath = "src\\test\\java\\org\\example\\DateHelperZ3Test.java";
 
         List<String[]> testCases = new ArrayList<>();
