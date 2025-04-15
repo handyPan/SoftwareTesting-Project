@@ -1,0 +1,11 @@
+org\example\DateHelperTestFileGeneratorByCombinatorial.class
+org\example\Quadratic.class
+org\example\DateHelperTestCaseGeneratorByZ3$TestCase.class
+org\example\DateHelperTestFileGeneratorByZ3.class
+org\example\DateHelper$DateFormats.class
+org\example\Quadratic$NotEnoughPrecisionException.class
+org\example\QuadraticTestCaseGeneratorByZ3.class
+org\example\QuadraticTestFileGeneratorByZ3.class
+org\example\QuadraticTestFileGeneratorByCombinatorial.class
+org\example\DateHelperTestCaseGeneratorByZ3.class
+org\example\DateHelper.class

@@ -1,0 +1,27 @@
+# ACTS Test Suite Generation: Mon Apr 14 00:44:50 EDT 2025
+#  '*' represents don't care value 
+# Degree of interaction coverage: 2
+# Number of parameters: 2
+# Maximum number of values per parameter: 5
+# Number of configurations: 20
+datetime,format
+01/04/2025,S_DDMMYYYY
+01/04/2025 12:00 a.m.,S_DDMMYYYY
+1743480000000L,S_DDMMYYYY
+invalid-date,S_DDMMYYYY
+01/04/2025,S_DDMMYYYYHHMMA
+01/04/2025 12:00 a.m.,S_DDMMYYYYHHMMA
+1743480000000L,S_DDMMYYYYHHMMA
+invalid-date,S_DDMMYYYYHHMMA
+01/04/2025,D_YYYYMMDD
+01/04/2025 12:00 a.m.,D_YYYYMMDD
+1743480000000L,D_YYYYMMDD
+invalid-date,D_YYYYMMDD
+01/04/2025,D_DDMMYYYY_N
+01/04/2025 12:00 a.m.,D_DDMMYYYY_N
+1743480000000L,D_DDMMYYYY_N
+invalid-date,D_DDMMYYYY_N
+01/04/2025,S_DDMMyy
+01/04/2025 12:00 a.m.,S_DDMMyy
+1743480000000L,S_DDMMyy
+invalid-date,S_DDMMyy

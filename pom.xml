@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>SYSC5807Project</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <z3.version>4.14.1</z3.version> <!-- Custom property for Z3 version -->
+        <junit.version>4.13.1</junit.version> <!-- Define JUnit version -->
+        <surefire.version>3.1.2</surefire.version>
+    </properties>
+
+    <dependencies>
+        <!-- Microsoft Z3 (using system scope) -->
+        <dependency>
+            <groupId>com.microsoft.z3</groupId>
+            <artifactId>z3</artifactId>
+            <version>${z3.version}</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/com.microsoft.z3.jar</systemPath>
+        </dependency>
+        <!-- JUnit 4.13.1 -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope> <!-- Tests only; won't be included in final JAR -->
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- Updated Surefire Plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${surefire.version}</version>
+            </plugin>
+
+            <!-- Compiler Plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+            </plugin>
+
+            <!-- JaCoCo Plugin -->
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.8.11</version> <!-- Use latest version -->
+                <executions>
+                    <execution>
+                        <id>prepare-agent</id>
+                        <goals>
+                            <goal>prepare-agent</goal> <!-- Attaches JaCoCo to tests -->
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>report</id>
+                        <phase>test</phase> <!-- Runs after tests -->
+                        <goals>
+                            <goal>report</goal> <!-- Generates HTML/XML reports -->
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- PITest -->
+            <plugin>
+                <groupId>org.pitest</groupId>
+                <artifactId>pitest-maven</artifactId>
+                <version>1.15.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>mutationCoverage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <targetClasses>
+                        <param>org.example.*</param> <!-- Classes to mutate -->
+                    </targetClasses>
+                    <targetTests>
+                        <param>org.example.*Test</param> <!-- Tests to verify mutations -->
+                    </targetTests>
+                    <!-- Critical: Exclude PITest and third-party code -->
+                    <excludedClasses>
+                        <param>org.pitest.*</param>
+                        <param>third.party.library.*</param>
+                    </excludedClasses>
+                    <!-- Configure to continue despite test failures -->
+                    <skipFailingTests>true</skipFailingTests>  <!-- Continue even if tests fail -->
+                    <timeoutConstant>10000</timeoutConstant>  <!-- Timeout per mutant (ms) -->
+                    <timeoutFactor>6</timeoutFactor>          <!-- Multiplier for test suite -->
+                    <threads>1</threads>                       <!-- Single thread for stability -->
+                    <outputFormats>
+                        <format>HTML</format>
+                    </outputFormats>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
